@@ -1,44 +1,5 @@
-INSTALLING DEPENDENCIES
 !pip install librosa soundfile xgboost lightgbm
-Requirement already satisfied: librosa in /usr/local/lib/python3.10/dist-packages (0.10.2.post1)
-Requirement already satisfied: soundfile in /usr/local/lib/python3.10/dist-packages (0.12.1)
-Requirement already satisfied: xgboost in /usr/local/lib/python3.10/dist-packages (2.0.3)
-Requirement already satisfied: lightgbm in /usr/local/lib/python3.10/dist-packages (4.5.0)
-Requirement already satisfied: audioread>=2.1.9 in /usr/local/lib/python3.10/dist-packages (from librosa) (3.0.1)
-Requirement already satisfied: numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.26.4)
-Requirement already satisfied: scipy>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.13.1)
-Requirement already satisfied: scikit-learn>=0.20.0 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.2.2)
-Requirement already satisfied: joblib>=0.14 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.4.2)
-Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.10/dist-packages (from librosa) (4.4.2)
-Requirement already satisfied: numba>=0.51.0 in /usr/local/lib/python3.10/dist-packages (from librosa) (0.60.0)
-Requirement already satisfied: pooch>=1.1 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.8.2)
-Requirement already satisfied: soxr>=0.3.2 in /usr/local/lib/python3.10/dist-packages (from librosa) (0.5.0.post1)
-Requirement already satisfied: typing-extensions>=4.1.1 in /usr/local/lib/python3.10/dist-packages (from librosa) (4.12.2)
-Requirement already satisfied: lazy-loader>=0.1 in /usr/local/lib/python3.10/dist-packages (from librosa) (0.4)
-Requirement already satisfied: msgpack>=1.0 in /usr/local/lib/python3.10/dist-packages (from librosa) (1.1.0)
-Requirement already satisfied: cffi>=1.0 in /usr/local/lib/python3.10/dist-packages (from soundfile) (1.17.1)
-Requirement already satisfied: pycparser in /usr/local/lib/python3.10/dist-packages (from cffi>=1.0->soundfile) (2.22)
-Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from lazy-loader>=0.1->librosa) (24.2)
-Requirement already satisfied: llvmlite<0.44,>=0.43.0dev0 in /usr/local/lib/python3.10/dist-packages (from numba>=0.51.0->librosa) (0.43.0)
-Requirement already satisfied: mkl_fft in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (1.3.8)
-Requirement already satisfied: mkl_random in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (1.2.4)
-Requirement already satisfied: mkl_umath in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (0.1.1)
-Requirement already satisfied: mkl in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2025.0.1)
-Requirement already satisfied: tbb4py in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2022.0.0)
-Requirement already satisfied: mkl-service in /usr/local/lib/python3.10/dist-packages (from numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2.4.1)
-Requirement already satisfied: platformdirs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from pooch>=1.1->librosa) (4.3.6)
-Requirement already satisfied: requests>=2.19.0 in /usr/local/lib/python3.10/dist-packages (from pooch>=1.1->librosa) (2.32.3)
-Requirement already satisfied: threadpoolctl>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn>=0.20.0->librosa) (3.5.0)
-Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.4.1)
-Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.10)
-Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2.3.0)
-Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2025.1.31)
-Requirement already satisfied: intel-openmp>=2024 in /usr/local/lib/python3.10/dist-packages (from mkl->numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2024.2.0)
-Requirement already satisfied: tbb==2022.* in /usr/local/lib/python3.10/dist-packages (from mkl->numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2022.0.0)
-Requirement already satisfied: tcmlib==1.* in /usr/local/lib/python3.10/dist-packages (from tbb==2022.*->mkl->numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (1.2.0)
-Requirement already satisfied: intel-cmplr-lib-rt in /usr/local/lib/python3.10/dist-packages (from mkl_umath->numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2024.2.0)
-Requirement already satisfied: intel-cmplr-lib-ur==2024.2.0 in /usr/local/lib/python3.10/dist-packages (from intel-openmp>=2024->mkl->numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3->librosa) (2024.2.0)
-IMPORT LIBRARIES
+
 # Standard libraries
 import numpy as np
 import pandas as pd
@@ -87,19 +48,7 @@ print("\nTraining data columns:")
 print(train_df.columns.tolist())
 print("\nTraining data sample:")
 display(train_df.head())
-Training samples: 444
-Testing samples: 195
 
-Training data columns:
-['filename', 'label']
-
-Training data sample:
-filename	label
-0	audio_1261.wav	1.0
-1	audio_942.wav	1.5
-2	audio_1110.wav	1.5
-3	audio_1024.wav	1.5
-4	audio_538.wav	2.0
 ### Analyzing Grammar Score Distribution
 
 # Distribution of grammar scores
@@ -116,16 +65,6 @@ plt.show()
 print("\nGrammar Score Statistics:")
 print(train_df['label'].describe())
 
-Grammar Score Statistics:
-count    444.000000
-mean       3.617117
-std        1.114151
-min        1.000000
-25%        2.500000
-50%        3.500000
-75%        4.500000
-max        5.000000
-Name: label, dtype: float64
 ### Examining Audio Characteristics
 
 # Load a sample audio file
@@ -294,15 +233,6 @@ train_features_df = extract_all_features(train_df, AUDIO_TRAIN_PATH)
 # Display the features
 print(f"Number of extracted features: {train_features_df.shape[1] - 2}")  # -2 for filename and label
 train_features_df.head()
-Extracting features:   0%|          | 0/444 [00:00<?, ?it/s]
-Number of extracted features: 43
-duration	energy	zero_crossing_rate	spectral_centroid	spectral_bandwidth	spectral_contrast	spectral_rolloff	mfcc_1_mean	mfcc_1_std	mfcc_2_mean	...	tempo	pause_count	mean_pause_duration	std_pause_duration	speech_rate_proxy	harmonic_energy	percussive_energy	spectral_flux_mean	filename	label
-0	35.904	0.001810	0.153315	1825.842184	1590.627590	17.591852	3314.733137	-431.344330	139.924088	63.669586	...	[110.29411764705883]	11	1.762909	1.522697	2459.586676	0.000673	0.000776	0.000011	audio_1261.wav	1.0
-1	58.016	0.007024	0.105771	1963.751497	1583.309851	16.456194	3666.810226	-416.027222	136.179123	25.201889	...	[208.33333333333334]	20	2.080000	4.001728	1694.342940	0.003060	0.002365	-0.000037	audio_942.wav	1.5
-2	41.088	0.008286	0.086582	1458.503648	1361.923684	21.826472	2800.820768	-377.097626	146.655350	79.231346	...	[125.0]	25	0.949760	0.826305	1388.069509	0.002677	0.004023	0.000044	audio_1110.wav	1.5
-3	56.672	0.007477	0.083135	1210.841894	1225.622399	22.975969	2311.053894	-366.449341	152.005661	88.243195	...	[125.0]	32	0.832000	0.697194	1332.598108	0.002573	0.003156	0.000109	audio_1024.wav	1.5
-4	58.752	0.005308	0.137032	1603.934483	1444.284172	17.216567	2954.158444	-289.687805	74.017784	104.711876	...	[133.92857142857142]	55	0.389818	0.527937	2196.044390	0.000932	0.003288	-0.000036	audio_538.wav	2.0
-5 rows × 45 columns
 
 ### Analyze Feature Correlation with Grammar Score
 plt.figure(figsize=(14, 10))
@@ -322,18 +252,6 @@ sns.heatmap(
 plt.title('Feature Correlation with Grammar Score')
 plt.tight_layout()
 plt.show()
-Top features correlated with grammar score:
-label                1.000000
-mfcc_2_std           0.427705
-mfcc_3_std           0.425801
-mfcc_7_std           0.363206
-spectral_contrast    0.334170
-duration             0.280994
-mfcc_6_std           0.279615
-mfcc_4_std           0.255912
-mfcc_5_std           0.245696
-mfcc_9_std           0.231250
-Name: label, dtype: float64
 
 #Model Development
 ### Preparing Data for Training
@@ -492,232 +410,6 @@ Training XGBoost...
 XGBoost - Training: RMSE = 0.0006, MAE = 0.0004, R² = 1.0000
 XGBoost - Validation: RMSE = 1.0122, MAE = 0.8080, R² = 0.2483
 
-Training LightGBM...
-[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.002088 seconds.
-You can set `force_col_wise=true` to remove the overhead.
-[LightGBM] [Info] Total Bins 4968
-[LightGBM] [Info] Number of data points in the train set: 355, number of used features: 43
-[LightGBM] [Info] Start training from score 3.635211
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-LightGBM - Training: RMSE = 0.1188, MAE = 0.0886, R² = 0.9883
-LightGBM - Validation: RMSE = 1.0056, MAE = 0.7935, R² = 0.2581
-
-Training Ridge...
-Ridge - Training: RMSE = 0.8020, MAE = 0.6566, R² = 0.4666
-Ridge - Validation: RMSE = 1.0400, MAE = 0.8371, R² = 0.2066
-
-Best model: LightGBM with validation RMSE = 1.0056
-Fitting 5 folds for each of 216 candidates, totalling 1080 fits
-[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000228 seconds.
-You can set `force_col_wise=true` to remove the overhead.
-[LightGBM] [Info] Total Bins 4968
-[LightGBM] [Info] Number of data points in the train set: 355, number of used features: 43
-[LightGBM] [Info] Start training from score 3.635211
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-
-Best hyperparameters:
-{'model__learning_rate': 0.1, 'model__max_depth': 5, 'model__n_estimators': 100, 'model__num_leaves': 31, 'model__subsample': 0.8}
-
-Tuned LightGBM - Training: RMSE = 0.1973, MAE = 0.1536, R² = 0.9677
-Tuned LightGBM - Validation: RMSE = 1.0017, MAE = 0.7794, R² = 0.2640
 ### Visualize Model Performance
 # Plot actual vs predicted values
 plt.figure(figsize=(10, 8))
@@ -753,18 +445,6 @@ if hasattr(best_pipeline.named_steps['model'], 'feature_importances_'):
     print(feature_importance_df.head(10))
 
 
-Top 10 most important features:
-               Feature  Importance
-13         mfcc_4_mean          42
-24          mfcc_9_std          41
-10          mfcc_2_std          40
-20          mfcc_7_std          37
-5    spectral_contrast          35
-11         mfcc_3_mean          33
-26         mfcc_10_std          31
-16          mfcc_5_std          28
-42  spectral_flux_mean          27
-30         mfcc_12_std          27
 ## Model Evaluation
 
 ### Cross-Validation
@@ -1340,113 +1020,7 @@ with open('grammar_scoring_model.pkl', 'wb') as f:
     pickle.dump(final_model, f)
 
 print("\nFinal model trained and saved as 'grammar_scoring_model.pkl'")
-[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000273 seconds.
-You can set `force_col_wise=true` to remove the overhead.
-[LightGBM] [Info] Total Bins 6166
-[LightGBM] [Info] Number of data points in the train set: 444, number of used features: 43
-[LightGBM] [Info] Start training from score 3.617117
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
-[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
 
-Final model trained and saved as 'grammar_scoring_model.pkl'
 ## Prediction on Test Data
 
 ### Extract Features from Test Data
@@ -1484,28 +1058,5 @@ plt.ylabel('Count')
 plt.grid(True)
 plt.show() 
 Test predictions completed and saved to 'submission.csv'
-Prediction statistics: Min = 1.87, Max = 5.00, Mean = 3.62
 
-Conclusion and Discussion This notebook presents a machine learning solution for automatically scoring grammar proficiency in spoken English audio samples. Let's summarize our approach and findings:
 
-Summary of Approach Data Exploration:
-
-Analyzed the distribution of grammar scores in the training data Examined audio characteristics through waveforms and spectrograms Found [to be filled based on actual results] distribution of scores Feature Engineering:
-
-Extracted comprehensive acoustic and spectral features Focused on features that capture speech patterns, rhythm, and fluency Identified [to be filled] as the most predictive features Model Development:
-
-Compared multiple regression models including Random Forest, Gradient Boosting, XGBoost, LightGBM, and Ridge Found that [to be filled] performed best with validation RMSE of [to be filled] Tuned hyperparameters to improve performance Evaluation:
-
-Used cross-validation to ensure robust performance estimation Achieved mean RMSE of [to be filled] across folds Visualized model predictions against actual scores to verify accuracy Key Findings The most predictive features for grammar scoring were [to be filled based on feature importance results] Our final model achieved a validation RMSE of [to be filled] and MAE of [to be filled] The model generalizes well across different speakers and recording conditions as shown by cross-validation Future Improvements Deep Learning Approaches:
-
-Implement neural networks (CNNs, RNNs) that can work directly with spectrograms Explore pre-trained speech models and transfer learning Advanced Features:
-
-Incorporate linguistic features from automatic speech recognition Extract grammatical structure information using NLP techniques Data Augmentation:
-
-Generate additional training samples through techniques like time stretching, pitch shifting Create synthetic examples of different grammatical errors to enhance model robustness Ensemble Methods:
-
-Combine predictions from multiple models to improve performance Implement stacking or blending techniques with diverse base models More Sophisticated Pause Analysis:
-
-Develop better algorithms for detecting meaningful pauses vs. hesitations Analyze pause patterns in relation to sentence structure Limitations The current approach relies on acoustic features as proxies for grammatical accuracy Without speech-to-text transcription, we can't directly analyze grammatical structures Feature engineering is based on general speech characteristics rather than specific grammar errors Practical Applications This grammar scoring system could be valuable for:
-
-Language learning applications providing automated feedback Educational assessment tools for speaking proficiency Self-study platforms for English learners Overall, our approach demonstrates that machine learning can effectively score grammar proficiency from audio samples, providing an automated alternative to human evaluation.
